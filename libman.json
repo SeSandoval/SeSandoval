@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "vue@2.6.12",
+      "destination": "Lib/Vuejs/"
+    },
+    {
+      "library": "vuetify@2.4.5",
+      "destination": "Lib/Vuetify/"
+    }
+
+    //{
+    //  "library": "material-components-web@11.0.0-canary.fa9b59f67.0",
+    //  "destination": "Lib/MDC/"
+    //},
+  ]
+}

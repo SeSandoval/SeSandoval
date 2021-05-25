@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - SeSandoval</title>
+    <link rel="icon" href="~/SeSandoval_favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    @*<link href="https://cdn.jsdelivr.net/npm/vuetify@2.4.5/dist/vuetify.min.css" rel="stylesheet">*@
+
+    @Styles.Render("~/Lib/vuetifycss")
+
+    @*<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>*@
+
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Styles.Render("~/Content/css")
+</head>
+
+
+
+<body>
+
+    <div id="Layout">
+        @*class="LayoutMenu"*@
+        <v-app id="inspire">
+
+
+            <v-navigation-drawer permanent
+                                 expand-on-hover
+                                 dark
+                                 app>
+                <v-list>
+                    <v-list-item class="px-2">
+                        <v-list-item-avatar>
+                            @*<v-img src="~/Images/PP/Myself.jpg"></v-img>*@
+                            <v-img src="~/SeSandoval_favicon.ico"></v-img>
+                        </v-list-item-avatar>
+                    </v-list-item>
+
+                    <v-list-item link href="@Url.Action("Index","Home")" class="text-decoration-none">
+                        <v-list-item-content>
+                            <v-list-item-title>
+                                Miguel Angel Segura Sandoval
+                            </v-list-item-title>
+                            <v-list-item-subtitle>miguel.sesandoval@gmail.com</v-list-item-subtitle>
+                        </v-list-item-content>
+                    </v-list-item>
+                </v-list>
+
+                <v-divider></v-divider>
+
+                <v-list nav dense>
+
+                    <v-list-item link href="@Url.Action("About","Home")" class="text-decoration-none">
+
+                        <v-tooltip right>
+                            <template v-slot:activator="{ on, attrs }">
+                                <v-list-item-icon>
+                                    <v-icon>contact_mail</v-icon>
+                                </v-list-item-icon>
+                                <v-list-item-title v-bind="attrs" v-on="on" v-if="LanguageEn">{{Contact[0]}}</v-list-item-title>
+                                <v-list-item-title v-bind="attrs" v-on="on" v-else>{{Contact[1]}}</v-list-item-title>
+                            </template>
+                            <span v-if="LanguageEn">{{Contact[2]}}</span>
+                            <span v-else>{{Contact[3]}}</span>
+                        </v-tooltip>
+
+                    </v-list-item>
+
+                    <v-list-item link href="@Url.Action("Books","Home")" class="text-decoration-none">
+
+                        <v-tooltip right>
+                            <template v-slot:activator="{ on, attrs }">
+                                <v-list-item-icon>
+                                    <v-icon>menu_book</v-icon>
+                                </v-list-item-icon>
+                                <v-list-item-title v-bind="attrs" v-on="on" v-if="LanguageEn">{{BookList[0]}}</v-list-item-title>
+                                <v-list-item-title v-bind="attrs" v-on="on" v-else>{{BookList[1]}}</v-list-item-title>
+                            </template>
+                            <span v-if="LanguageEn">{{BookList[2]}}</span>
+                            <span v-else>{{BookList[3]}}</span>
+                        </v-tooltip>
+
+                    </v-list-item>
+
+                    <v-list-item link href="@Url.Action("FAQ","Home")" class="text-decoration-none">
+
+                        <v-tooltip right>
+                            <template v-slot:activator="{ on, attrs }">
+                                <v-list-item-icon>
+                                    <v-icon>help_outline</v-icon>
+                                </v-list-item-icon>
+                                <v-list-item-title v-bind="attrs" v-on="on" v-if="LanguageEn">{{FAQ[0]}}</v-list-item-title>
+                                <v-list-item-title v-bind="attrs" v-on="on" v-else>{{FAQ[1]}}</v-list-item-title>
+                            </template>
+                            <span v-if="LanguageEn">{{FAQ[2]}}</span>
+                            <span v-else>{{FAQ[3]}}</span>
+                        </v-tooltip>
+
+                    </v-list-item>
+
+                    <v-list-group :value="false">
+                        <template v-slot:activator>
+                            <v-list-item-icon>
+                                <v-icon>language</v-icon>
+                            </v-list-item-icon>
+                            <v-list-item-title v-if="LanguageEn">{{Language[0]}}</v-list-item-title>
+                            <v-list-item-title v-else>{{Language[1]}}</v-list-item-title>
+                        </template>
+                        <v-list-item link>
+                            <v-tooltip right>
+                                <template v-slot:activator="{ on, attrs }">
+                                    <v-list-item-title v-bind="attrs" v-on="on" v-if="LanguageEn" v-on:click="LanguageToEn">{{Language[4][0][0]}}</v-list-item-title>
+                                    <v-list-item-title v-bind="attrs" v-on="on" v-else v-on:click="LanguageToEn">{{Language[4][0][1]}}</v-list-item-title>
+                                    <v-list-item-icon>
+                                        <v-icon>EN</v-icon>
+                                    </v-list-item-icon>
+                                </template>
+                                <span>{{Language[2]}}</span>
+                            </v-tooltip>
+                        </v-list-item>
+                        <v-list-item link>
+                            <v-tooltip right>
+                                <template v-slot:activator="{ on, attrs }">
+                                    <v-list-item-title v-bind="attrs" v-on="on" v-if="LanguageEn" v-on:click="LanguageToEs">{{Language[4][1][0]}}</v-list-item-title>
+                                    <v-list-item-title v-bind="attrs" v-on="on" v-else v-on:click="LanguageToEs">{{Language[4][1][1]}}</v-list-item-title>
+                                    <v-list-item-icon>
+                                        <v-icon>ES</v-icon>
+                                    </v-list-item-icon>
+                                </template>
+                                <span>{{Language[3]}}</span>
+                            </v-tooltip>
+                        </v-list-item>
+                    </v-list-group>
+
+                </v-list>
+            </v-navigation-drawer>
+
+            <!--<v-app-bar absolute
+            dark-->
+            @*src="~/Images/OS.jpg"
+                fade-img-on-scroll
+                scroll-target="#scrolling-techniques-3"*@
+            <!--app>
+
+            <v-app-bar-nav-icon><v-icon>computer</v-icon></v-app-bar-nav-icon>
+
+            <v-app-bar-title>SeSandoval</v-app-bar-title>-->
+            @*<v-spacer></v-spacer>*@
+
+            <!--<template v-slot:extension>
+                    <v-tabs align-with-title>
+                        <v-tab>About Me</v-tab>
+                        <v-tab>Personal projects</v-tab>
+                        <v-tab>Work Experience</v-tab>
+                    </v-tabs>
+                </template>
+            </v-app-bar>
+
+            <v-main>
+                <!-- Provides the application the proper gutter -->
+            <!--<v-container fluid>
+
+            RenderBody()-->
+            <!-- If using vue-router -->-->
+            <!--@*<router-view>*@
+                    @*</router-view>*@
+                </v-container>
+            </v-main>-->
+
+            @RenderBody()
+
+            <v-footer dark absolute>
+                <v-row justify="center" no-gutters>
+                    <v-col class="py-2 text-center" cols="12">
+                        &copy; @DateTime.Now.Year - SeSandoval, Software Engineer
+                    </v-col>
+                </v-row>
+            </v-footer>
+
+        </v-app>
+    </div>
+
+    @*<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/vuetify@2.4.5/dist/vuetify.js"></script>*@
+
+    @Scripts.Render("~/Lib/vuejs")
+
+    @Scripts.Render("~/Lib/vuetifyjs")
+
+    @Scripts.Render("~/bundles/jquery")
+
+    @Scripts.Render("~/bundles/shared")
+
+    @RenderSection("scripts", required: false)
+
+    @* add footer *@
+</body>
+
+</html>

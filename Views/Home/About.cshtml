@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<v-app-bar absolute
+           dark
+           app>
+
+    <v-app-bar-nav-icon><v-icon>code</v-icon></v-app-bar-nav-icon>
+
+    <v-app-bar-title>SeSandoval</v-app-bar-title>
+    <v-spacer></v-spacer>
+
+    @*<v-btn icon>
+            <v-icon>mdi-magnify</v-icon>
+        </v-btn>
+
+        <v-btn icon>
+            <v-icon>mdi-heart</v-icon>
+        </v-btn>
+
+        <v-btn icon>
+            <v-icon>mdi-dots-vertical</v-icon>
+        </v-btn>*@
+
+    <template v-slot:extension>
+        <v-tabs align-with-title v-model="viewTabs">
+            <v-tab>Contact Information</v-tab>
+        </v-tabs>
+    </template>
+</v-app-bar>
+
+<v-main>
+    <v-container fluid class="mainContainer">
+        @*
+            RenderBody()
+            If using vue-router
+            <router-view>
+            </router-view>
+        *@
+
+
+
+        <v-tabs-items v-model="viewTabs">
+
+            <v-tab-item>
+
+                <address>
+                    SeSandoval Location<br />
+                    Santa Catarina, Nuevo León, México<br />
+                    <abbr title="ZIP Code">ZC:</abbr>
+                    66120<br />
+                    <abbr title="Phone">P:</abbr>
+                    +52-812-394-0725
+                </address>
+
+                <address>
+                    <strong>
+                        <v-icon>email</v-icon>
+                        Email (let's drop the hyphen)*:
+                    </strong>   <a href="mailto:miguel.sesandoval@gmail.com">miguel.sesandoval@gmail.com</a>
+                    <br />
+                    <strong>
+                        <v-icon>link</v-icon>
+                        LinkedIn:
+                    </strong> <a href="https://www.linkedin.com/in/miguel-angel-segura-sandoval-411808132/">https://www.linkedin.com/in/miguel-angel-segura-sandoval-411808132/</a>
+                </address>
+
+                <div>
+                    <strong>*A note on email versus e-mail.</strong>
+                    <p>
+                        Newly coined nonce words of English are often spelled with a hyphen, but the hyphen disappears when the words become widely used.
+                        For example, people used to write “non-zero” and “soft-ware” instead of “nonzero” and “software”; the same trend has occurred for hundreds of other words.
+                        Thus it's high time for everybody to stop using the archaic spelling “e-mail”.
+                    </p>
+                </div>
+
+            </v-tab-item>
+
+        </v-tabs-items>
+
+    </v-container>
+</v-main>
+
+

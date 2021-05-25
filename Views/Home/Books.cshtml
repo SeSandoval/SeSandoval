@@ -1,0 +1,228 @@
+﻿
+@{
+    ViewBag.Title = "Books!";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<v-app-bar absolute
+           dark
+           app>
+
+    <v-app-bar-nav-icon><v-icon>code</v-icon></v-app-bar-nav-icon>
+
+    <v-app-bar-title>SeSandoval</v-app-bar-title>
+    <v-spacer></v-spacer>
+
+    <template v-slot:extension>
+        <v-tabs align-with-title v-model="viewTabs">
+            <v-tab>Introduction to Algorithms</v-tab>
+            <v-tab>Concrete Mathematics</v-tab>
+            <v-tab>Mathematics for Machine Learning</v-tab>
+            <v-tab>Operating Systems</v-tab>
+        </v-tabs>
+    </template>
+</v-app-bar>
+
+<v-main>
+    <v-container fluid class="mainContainer">
+
+        <v-tabs-items v-model="viewTabs">
+
+            <v-tab-item>
+                <v-row>
+                    <v-col cols="12">
+                        @*<v-col cols="12" class="d-flex justify-center">*@
+                        @*<v-img src="../../Images/PP/Myself.jpg"
+                           max-width="20%"
+                           aspect-ratio="1">
+                    </v-img>*@
+
+                        <v-card max-width="100%">
+                            <v-img class="white--text align-end grey darken-4"
+                                   max-height="300px"
+                                   contain
+                                   src="../../Images/CLRS.jpg">
+                                <v-card-title>The most popular book on algorithms is on my list.</v-card-title>
+                            </v-img>
+
+                            <v-card-subtitle class="pb-0">
+                               Introduction to Algorithms.
+                            </v-card-subtitle>
+
+                            <v-card-text class="text--primary">
+                                <div>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent faucibus semper magna at facilisis.
+                                    Praesent sed mi venenatis, porttitor magna nec, faucibus metus. In hac habitasse platea dictumst.
+                                    Pellentesque orci nulla, lobortis in efficitur ac, placerat sodales metus.
+                                    Morbi vehicula suscipit eros, laoreet vestibulum ipsum aliquet vitae. Morbi sagittis pulvinar enim sed lobortis.
+                                    Aenean non laoreet quam. Suspendisse fringilla dapibus scelerisque.
+                                    Praesent a neque sit amet dolor ornare interdum in ut magna. In a orci nulla.
+                                    Mauris ultrices ante sit amet lorem fermentum ultricies. Sed tempor sem mi.
+                                    Nunc pulvinar, magna a mattis faucibus, leo nunc congue sapien, quis sollicitudin massa mauris eget felis.
+                                </div>
+
+                            </v-card-text>
+
+                        </v-card>
+
+                    </v-col>
+
+                </v-row>
+
+                <v-row>
+                    <v-col cols="12">
+
+                    </v-col>
+                </v-row>
+            </v-tab-item>
+
+            <v-tab-item>
+                <v-row>
+                    <v-col cols="12">
+                        @*<v-col cols="12" class="d-flex justify-center">*@
+                        @*<v-img src="../../Images/PP/Myself.jpg"
+                           max-width="20%"
+                           aspect-ratio="1">
+                    </v-img>*@
+
+                        <v-card max-width="100%">
+                            <v-img class="white--text align-end grey darken-4"
+                                   max-height="300px"
+                                   contain
+                                   src="../../Images/CM.jpg">
+                                <v-card-title>Donald Knuth made me feel dumb more than once.</v-card-title>
+                            </v-img>
+
+                            <v-card-subtitle class="pb-0">
+                                Concrete Mathematics.
+                            </v-card-subtitle>
+
+                            <v-card-text class="text--primary">
+                                <div>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent faucibus semper magna at facilisis.
+                                    Praesent sed mi venenatis, porttitor magna nec, faucibus metus. In hac habitasse platea dictumst.
+                                    Pellentesque orci nulla, lobortis in efficitur ac, placerat sodales metus.
+                                    Morbi vehicula suscipit eros, laoreet vestibulum ipsum aliquet vitae. Morbi sagittis pulvinar enim sed lobortis.
+                                    Aenean non laoreet quam. Suspendisse fringilla dapibus scelerisque.
+                                    Praesent a neque sit amet dolor ornare interdum in ut magna. In a orci nulla.
+                                    Mauris ultrices ante sit amet lorem fermentum ultricies. Sed tempor sem mi.
+                                    Nunc pulvinar, magna a mattis faucibus, leo nunc congue sapien, quis sollicitudin massa mauris eget felis.
+                                </div>
+
+                            </v-card-text>
+
+                        </v-card>
+
+                    </v-col>
+
+                </v-row>
+
+                <v-row>
+                    <v-col cols="12">
+
+                    </v-col>
+                </v-row>
+            </v-tab-item>
+
+            <v-tab-item>
+                <v-row>
+                    <v-col cols="12">
+                        @*<v-col cols="12" class="d-flex justify-center">*@
+                        @*<v-img src="../../Images/PP/Myself.jpg"
+                           max-width="20%"
+                           aspect-ratio="1">
+                    </v-img>*@
+
+                        <v-card max-width="100%">
+                            <v-img class="white--text align-end grey darken-4"
+                                   max-height="300px"
+                                   contain
+                                   src="../../Images/ML.jpg">
+                                <v-card-title>The book I needed to understand the maths involved behind Machine Learning.</v-card-title>
+                            </v-img>
+
+                            <v-card-subtitle class="pb-0">
+                                Mathematics for Machine Learning.
+                            </v-card-subtitle>
+
+                            <v-card-text class="text--primary">
+                                <div>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent faucibus semper magna at facilisis.
+                                    Praesent sed mi venenatis, porttitor magna nec, faucibus metus. In hac habitasse platea dictumst.
+                                    Pellentesque orci nulla, lobortis in efficitur ac, placerat sodales metus.
+                                    Morbi vehicula suscipit eros, laoreet vestibulum ipsum aliquet vitae. Morbi sagittis pulvinar enim sed lobortis.
+                                    Aenean non laoreet quam. Suspendisse fringilla dapibus scelerisque.
+                                    Praesent a neque sit amet dolor ornare interdum in ut magna. In a orci nulla.
+                                    Mauris ultrices ante sit amet lorem fermentum ultricies. Sed tempor sem mi.
+                                    Nunc pulvinar, magna a mattis faucibus, leo nunc congue sapien, quis sollicitudin massa mauris eget felis.
+                                </div>
+
+                            </v-card-text>
+
+                        </v-card>
+
+                    </v-col>
+
+                </v-row>
+
+                <v-row>
+                    <v-col cols="12">
+
+                    </v-col>
+                </v-row>
+            </v-tab-item>
+
+            <v-tab-item>
+                <v-row>
+                    <v-col cols="12">
+                        @*<v-col cols="12" class="d-flex justify-center">*@
+                        @*<v-img src="../../Images/PP/Myself.jpg"
+                           max-width="20%"
+                           aspect-ratio="1">
+                    </v-img>*@
+
+                        <v-card max-width="100%">
+                            <v-img class="white--text align-end grey darken-4"
+                                   max-height="300px"
+                                   contain
+                                   src="../../Images/OS.jpg">
+                                <v-card-title>Probably one of the best books on Operating Systems (It's also free online!).</v-card-title>
+                            </v-img>
+
+                            <v-card-subtitle class="pb-0">
+                                Opearting Systems, Three Easy Pieces.
+                            </v-card-subtitle>
+
+                            <v-card-text class="text--primary">
+                                <div>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent faucibus semper magna at facilisis.
+                                    Praesent sed mi venenatis, porttitor magna nec, faucibus metus. In hac habitasse platea dictumst.
+                                    Pellentesque orci nulla, lobortis in efficitur ac, placerat sodales metus.
+                                    Morbi vehicula suscipit eros, laoreet vestibulum ipsum aliquet vitae. Morbi sagittis pulvinar enim sed lobortis.
+                                    Aenean non laoreet quam. Suspendisse fringilla dapibus scelerisque.
+                                    Praesent a neque sit amet dolor ornare interdum in ut magna. In a orci nulla.
+                                    Mauris ultrices ante sit amet lorem fermentum ultricies. Sed tempor sem mi.
+                                    Nunc pulvinar, magna a mattis faucibus, leo nunc congue sapien, quis sollicitudin massa mauris eget felis.
+                                </div>
+
+                            </v-card-text>
+
+                        </v-card>
+
+                    </v-col>
+
+                </v-row>
+
+                <v-row>
+                    <v-col cols="12">
+
+                    </v-col>
+                </v-row>
+            </v-tab-item>
+
+        </v-tabs-items>
+
+    </v-container>
+</v-main>
+
+
